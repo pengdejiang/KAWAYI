@@ -61,7 +61,7 @@ for keyword in keywords:
         org = "Chinanet"
         isp_en = "ctcc"
     elif isp == "移动":
-        org == "China Mobile communications corporation"
+        org = "China Mobile communications corporation"
         isp_en = "cmcc"
         
 #    else:
