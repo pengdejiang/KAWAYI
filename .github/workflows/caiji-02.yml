@@ -2,7 +2,7 @@ name: CAIJI-02
 
 on:
   schedule:
-  - cron: '02 13,19,4,7 * * *'  #4>11>20>2&&&
+    - cron: '20 */8 * * *'  # 每8个小时的第 20 分钟运行
   workflow_dispatch:
     分支:
       - main
@@ -14,21 +14,40 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+    
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - name: Install numpy          
-        run: pip install 'numpy==1.26.4'
+
+      - name: Install dependencies
+        run: pip install --upgrade pip
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
       - name: Install dependencies
-        run: pip install opencv-python requests 
+        run: pip install opencv-python requests
       - name: Install dependencies
-        run: pip install Beautifulsoup4 requests 
+        run: pip install Beautifulsoup4 requests
       - name: Install dependencies
-        run: pip install translate requests 
+        run: pip install translate requests
+      #- name: Install dependencies
+        #run: pip install ffmpy
+      - name: Install dependencies
+        run: pip install termcolor
+      - name: Install dependencies
+        run: pip install func_timeout
+      - name: Install dependencies
+        run: pip install replace
+      - name: Install dependencies
+        run: pip install input
+      - name: Install dependencies
+        run: pip install opencc
+      - name: Install dependencies
+        run: pip install pypinyin
+      - name: Install dependencies
+        run: pip install pytz 
+      - name: Install dependencies
+        run: pip install tqdm
         
       - name: Run iptv
         run: python ${{ github.workspace }}/ZUZU-PY/CAIJI-02.py
