@@ -31,7 +31,7 @@ jobs:
         run: pip install translate requests 
         
       - name: Run iptv
-        run: python ${{ github.workspace }}/ZUZU-PY/#CAIJI.py
+        run: python ${{ github.workspace }}/ZUZU-PY/CAIJI-02.py
          
       - name: Commit results
         run: |
