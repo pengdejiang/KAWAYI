@@ -54,10 +54,8 @@ for keyword in keywords:
 
     current_time = datetime.now()  # 获取当前时间
     timeout_cnt = 0   # 初始化超时计数器
-	html_content_history = []  # 用于存储HTML响应内容的历史记录
     result_urls = set()  # 初始化一个集合来存储结果URL
-	same_html_count = 0  # 初始化HTML内容相同的计数器
-    while len(result_urls) == 0 and timeout_cnt <= 5 and same_html_count < 20:  # 循环直到找到结果URL、超时次数超过5次或HTML相同20次
+    while len(result_urls) == 0 and timeout_cnt <= 5:  # 循环直到找到结果URL或超时次数超过5次
         try:
             # 构造搜索URL的基础部分			
             search_url = 'https://fofa.info/result?qbase64='
@@ -76,15 +74,6 @@ for keyword in keywords:
             response.raise_for_status()
 			# 获取响应的HTML内容
             html_content = response.text
-			        # 检查HTML内容是否与上一次相同
-            if html_content_history and html_content == html_content_history[-1]:
-                same_html_count += 1
-            else:
-                same_html_count = 0  # 重置计数器
-
-            # 更新HTML内容历史记录
-            html_content_history.append(html_content)
-								
 			# 使用BeautifulSoup解析HTML内容
             html_soup = BeautifulSoup(html_content, "html.parser")
 			# 定义正则表达式来查找IP地址和端口
@@ -140,16 +129,8 @@ for keyword in keywords:
                 print(f"未找到合适的 IP 地址。")
        # 尝试捕获两种异常：requests.Timeout 和 requests.RequestException
         except (requests.Timeout, requests.RequestException) as e:
-		    print(f"{current_time} 请求错误: {e}")
 			# 如果发生超时或请求异常，增加超时计数器
             timeout_cnt += 1
-		    # 检查是否因为HTML内容相同20次而跳出循环
-        if same_html_count == 20:
-            print(f"{current_time} HTML内容连续20次相同，跳出循环。")
-            break
-	        # 移除html_content_history中最后一个元素（因为是最新的HTML内容，可能不是重复的）
-    html_content_history.pop()	
-				
 			# 打印当前时间和发生超时的省份，以及异常次数
             print(f"{current_time} [{province}]搜索请求发生超时，异常次数：{timeout_cnt}")
 			# 判断超时次数是否超过5次
