@@ -1,4 +1,4 @@
-name: Daily Job
+name: 组播扫描Daily Job
 
 on:
   schedule:
