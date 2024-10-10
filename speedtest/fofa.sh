@@ -150,7 +150,14 @@ case $city_choice in
         ;;
     0)
         # 如果选择是“全部选项”，则逐个处理每个选项
-        for option in {1..15}; do
+        #原版选择1--15已经注释掉了
+#        for option in {1..15}; do
+
+        # 直接对数字15执行操作 选择对15进行操作
+         option=15
+
+
+        
           bash  "$0" $option  # 假定fofa.sh是当前脚本的文件名，$option将递归调用
         done
         exit 0
