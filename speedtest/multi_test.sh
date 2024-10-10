@@ -20,7 +20,7 @@ if [ $# -eq 0 ]; then
 #  echo "12. 福建电信（Fujian_114）"
 #  echo "13. 湖南电信（Hunan_282）"
 #  echo "14. 甘肃电信（Gansu_105）"
-  echo "1. 河北联通（Hebei_313）"
+#  echo "1. 河北联通（Hebei_313）"
   echo "0. 全部"
   read -t 10 -p "输入选择或在10秒内无输入将默认选择全部: " city_choice
 
@@ -113,7 +113,13 @@ case $city_choice in
         ;;
     0)
         # 如果选择是“全部选项”，则逐个处理每个选项
-        for option in {1..15}; do
+        
+        #这个是原版 选择1--15 注释掉
+#        for option in {1..15}; do
+        
+        # 直接对数字15执行操作 选择15号执行
+         option=15
+
           bash  ./multi_test.sh $option  # 假定script_name.sh是当前脚本的文件名，$option将递归调用
         done
         exit 0
