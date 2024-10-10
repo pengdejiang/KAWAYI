@@ -33,8 +33,6 @@
 河BC衡水公共,http://www.xingwen.online:9810/rtp/239.253.93.7:6160$河北uni
 河BC邢台综合,http://www.xingwen.online:9810/rtp/239.253.93.8:6161$河北uni
 河BC邢台城市,http://www.xingwen.online:9810/rtp/239.253.93.10:6163$河北uni
-
-
 CCTV1,http://www.xingwen.online:9810/rtp/239.253.92.83:8012$河北uni
 CCTV2,http://www.xingwen.online:9810/rtp/239.253.92.190:6065$河北uni
 CCTV3,http://www.xingwen.online:9810/rtp/239.253.92.191:6057$河北uni
@@ -57,7 +55,6 @@ CETV1,http://www.xingwen.online:9810/rtp/239.253.92.211:6069$河北uni
 CETV2,http://www.xingwen.online:9810/rtp/239.253.92.108:6136$河北uni
 CETV4,http://www.xingwen.online:9810/rtp/239.253.92.200:6137$河北uni
 CETV5,http://www.xingwen.online:9810/rtp/239.253.93.164:6440$河北uni
-
 CF电视指南,http://www.xingwen.online:9810/rtp/239.253.93.249:6427$河北uni
 CF第一剧场,http://www.xingwen.online:9810/rtp/239.253.93.138:6428$河北uni
 CF风云剧场,http://www.xingwen.online:9810/rtp/239.253.93.251:6429$河北uni
@@ -70,8 +67,6 @@ CF女性时尚,http://www.xingwen.online:9810/rtp/239.253.92.144:6114$河北uni
 CF文化精品,http://www.xingwen.online:9810/rtp/239.253.93.175:6439$河北uni
 CF世界地理,http://www.xingwen.online:9810/rtp/239.253.92.131:6113$河北uni
 CF央视台球,http://www.xingwen.online:9810/rtp/239.253.93.231:6409$河北uni
-
-#1080
 WA安徽卫视,http://www.xingwen.online:9810/rtp/239.253.92.209:6566$河北uni
 WB北京卫视,http://www.xingwen.online:9810/rtp/239.253.92.87:8014$河北uni
 WD东方卫视,http://www.xingwen.online:9810/rtp/239.253.92.89:8019$河北uni
