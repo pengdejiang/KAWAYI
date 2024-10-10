@@ -8,41 +8,6 @@
 #####   exit 0
 ##### fi
 
-#time=$(date +%m%d%H%M)
-#i=0
-
-#if [ $# -eq 0 ]; then
-#  echo "请选择城市："
-#  echo "1. 上海电信（Shanghai_103）"
-#  echo "2. 北京联通（Beijing_liantong_145）"
-#  echo "3. 四川电信（Sichuan_333）"
-#  echo "4. 浙江电信（Zhejiang_120）"
-#  echo "5. 北京电信（Beijing_dianxin_186）"
-#  echo "6. 江苏（Jiangsu）"
-#  echo "7. 广东电信（Guangdong_332）"
-#  echo "8. 河南电信（Henan_327）"
-#  echo "9. 山西电信（Shanxi_117）"
-#  echo "10. 天津联通（Tianjin_160）"
-#  echo "11. 湖北电信（Hubei_90）"
-#  echo "12. 福建电信（Fujian_114）"
-#  echo "13. 湖南电信（Hunan_282）"
-#  echo "14. 甘肃电信（Gansu_105）"
-#  echo "15. 河北联通（Hebei_313）"
-#  echo "0. 全部"
-#  read -t 10 -p "输入选择或在10秒内无输入将默认选择全部: " city_choice
-
-#  if [ -z "$city_choice" ]; then
-#      echo "未检测到输入，自动选择全部选项..."
-#      city_choice=0
-#  fi
-
-#else
-#  city_choice=$1
-#fi
-
-
-#以上是原版，我自己注释掉了 原版全部选择 现在修改为选择默认15 也可修改下面  city_choice=15 的15为其它省份
-
 time=$(date +%m%d%H%M)
 i=0
 
@@ -63,21 +28,17 @@ if [ $# -eq 0 ]; then
   echo "13. 湖南电信（Hunan_282）"
   echo "14. 甘肃电信（Gansu_105）"
   echo "15. 河北联通（Hebei_313）"
-  # 注意：原脚本中的"0. 全部"选项已被移除或可以保留但不做默认选择
-  
-  # 读取用户输入，如果在10秒内没有输入，则默认选择15
-  read -t 10 -p "输入选择或在10秒内无输入将默认选择15: " city_choice
-  
-  # 如果用户没有在10秒内输入，则默认city_choice为15
+  echo "0. 全部"
+  read -t 10 -p "输入选择或在10秒内无输入将默认选择全部: " city_choice
+
   if [ -z "$city_choice" ]; then
-    echo "未检测到输入，自动选择河北联通（选项15）..."
-    city_choice=15
+      echo "未检测到输入，自动选择全部选项..."
+      city_choice=0
   fi
+
 else
   city_choice=$1
 fi
-
-
 
 # 根据用户选择设置城市和相应的stream
 case $city_choice in
