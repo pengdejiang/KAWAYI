@@ -1,15 +1,11 @@
-name: Deploy site files
+name: Deploy智慧光迅
 
 on:
-  #push:
-  #  branches:
-  #    - main # 只在master上push触发部署
-  #  paths-ignore: # 下列文件的变更不触发部署，可以自行添加
-  #    - README.md
-  #    - LICENSE
+  schedule:
+  - cron: '45 18 * * *'  #6>14>22>2&&&
   workflow_dispatch:
-    branches:
-       - main
+    分支:
+      - main
 
 
 jobs:
