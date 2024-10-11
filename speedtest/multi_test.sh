@@ -37,7 +37,7 @@ fi
 case $city_choice in
     1)
         city="Shanghai_103"
-        stream="udp/239.45.1.4:5140"
+        stream="rtp/239.45.1.4:5140"
 	channel_key="上海"
         ;;
     2)
@@ -47,7 +47,7 @@ case $city_choice in
         ;;
     3)
         city="Sichuan_333"
-        stream="udp/239.93.42.33:5140"
+        stream="rtp/239.93.42.33:5140"
         channel_key="四川电信"
         ;;
     4)
@@ -57,7 +57,7 @@ case $city_choice in
         ;;
     5)
         city="Beijing_dianxin_186"
-        stream="udp/225.1.8.80:2000"
+        stream="rtp/225.1.8.80:2000"
         channel_key="北京电信"
         ;;
     6)
@@ -67,7 +67,7 @@ case $city_choice in
         ;;
     7)
         city="Guangdong_332"
-        stream="udp/239.77.1.98:5146"
+        stream="rtp/239.77.1.98:5146"
         channel_key="广东电信"
         ;;
     8)
@@ -77,12 +77,12 @@ case $city_choice in
         ;;
     9)
         city="Shanxi_117"
-        stream="udp/239.1.1.7:8007"
+        stream="rtp/239.1.1.7:8007"
         channel_key="山西电信"
         ;;
     10)
         city="Tianjin_160"
-        stream="udp/225.1.2.190:5002"
+        stream="rtp/225.1.2.190:5002"
         channel_key="天津联通"
         ;;
     11)
@@ -97,12 +97,12 @@ case $city_choice in
         ;;
     13)
         city="Hunan_282"
-        stream="udp/239.76.252.35:9000"
+        stream="rtp/239.76.252.35:9000"
         channel_key="湖南电信"
         ;;
     14)
         city="Gansu_105"
-        stream="udp/239.255.30.123:8231"
+        stream="rtp/239.255.30.123:8231"
         channel_key="甘肃电信"
         ;;
     15)
@@ -131,7 +131,7 @@ stream="rtp/239.253.93.134:6631"
 channel_key="河北联通"
 
 city="Shanghai_103"
-stream="udp/239.45.1.4:5140"
+stream="rtp/239.45.1.4:5140"
 channel_key="上海"
 
 
