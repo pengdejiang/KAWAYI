@@ -1,11 +1,10 @@
-name: 组播扫描Multi+Fofa
+name: 组播测测
 
 on:
   schedule:
-    - cron: "37 23,3,7,11,15 * * *"  #定时执行
+    - cron: '05 7,3,7,11,15 * * *'
+
   workflow_dispatch:
-    分支:
-      - main
 
 jobs:
   run-script:
@@ -26,11 +25,17 @@ jobs:
         cd $GITHUB_WORKSPACE/speedtest
         bash ./multi_test.sh
         bash ./fofa.sh
-    - name: Update Results
+
+    - name: Run Python script
+      run: python main.py
+
+    - name: Commit and push if changed
       run: |
-        cd $GITHUB_WORKSPACE/speedtest
-        git config --local user.email "actions@github.com"  #设置当前仓库的Git用户邮箱为actions@github.com
-        git config --local user.name "GitHub Action"  #设置当前仓库的Git用户名为GitHub Action
-        git add .    #将当前目录下的所有更改添加到暂存区
-        git commit -am "Automatic update"  #将暂存区的更改提交，-a表示自动将所有已跟踪文件的更改和删除添加到提交中，-m后面跟的是提交信息
-        git push origin/main
+        cd $GITHUB_WORKSPACE/speedtest	  
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add -A
+        if ! git diff --staged --quiet; then
+          git commit -m "Auto-update live files"
+          git push
+        fi
