@@ -1,0 +1,38 @@
+name: 组播扫描Multi+Fofa
+
+on:
+  schedule:
+  
+    - cron: "*/3 * * * *"    #每3分钟执行一次
+#    - cron: "25 23,3,7,11,15 * * *"  #定时执行暂时不使用
+  workflow_dispatch:
+    分支:
+      - main
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y yt-dlp sed nmap
+      
+    - name: Run Multitest Script
+      #working-directory: iptv/speedtest
+      run: |
+        cd $GITHUB_WORKSPACE/speedtest
+        bash ./multi_test.sh
+        bash ./fofa.sh
+    - name: Update Results
+      run: |
+        cd $GITHUB_WORKSPACE/speedtest
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -am "Automatic update"
+        git push
