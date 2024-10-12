@@ -113,7 +113,7 @@ case $city_choice in
     0)
         # 如果选择是“全部选项”，则逐个处理每个选项
         #这里是关键核心选择 现在选择15-15 默认是选择1--15
-        for option in {15..15}; do
+        for option in {14..15}; do
           bash  ./multi_test.sh $option  # 假定script_name.sh是当前脚本的文件名，$option将递归调用
         done
         exit 0
