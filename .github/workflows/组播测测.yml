@@ -1,0 +1,40 @@
+name: 组播测测
+
+on:
+  schedule:
+    - cron: '12 * * * *'  #每小时按设置数字的时间运行
+
+  workflow_dispatch:
+
+    分支:
+      - main
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y yt-dlp sed nmap
+      
+    - name: Run Multitest Script
+      #working-directory: iptv/speedtest
+      run: |
+        cd $GITHUB_WORKSPACE/speedtest
+        bash ./multi_test.sh
+        bash ./fofa.sh
+
+    - name: Commit and push if changed
+      run: |
+        cd $GITHUB_WORKSPACE/speedtest	  
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add -A
+        if ! git diff --staged --quiet; then
+          git commit -m "Auto-update live files"
+          git push
+        fi
