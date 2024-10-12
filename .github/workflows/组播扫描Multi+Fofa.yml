@@ -26,9 +26,6 @@ jobs:
         bash ./multi_test.sh
         bash ./fofa.sh
 
-    - name: Run Python script
-      run: python main.py
-
     - name: Commit and push if changed
       run: |
         cd $GITHUB_WORKSPACE/speedtest	  
