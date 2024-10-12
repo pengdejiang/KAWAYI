@@ -2,7 +2,7 @@ name: 组播测测
 
 on:
   schedule:
-    - cron: '50 * * * *'  #每小时按设置数字的时间运行
+    - cron: '55 * * * *'  #每小时按设置数字的时间运行
 
   workflow_dispatch:
 
