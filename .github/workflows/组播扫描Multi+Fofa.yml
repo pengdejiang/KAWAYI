@@ -3,7 +3,7 @@ name: 组播扫描Multi+Fofa
 on:
   schedule:
   
-    - cron: "*/3 * * * *"    #每3分钟执行一次
+    - cron: "*/5 * * * *"    #每5分钟执行一次
 #    - cron: "25 23,3,7,11,15 * * *"  #定时执行暂时不使用
   workflow_dispatch:
     分支:
