@@ -1,7 +1,7 @@
 name: 组播测测
 on:
   schedule:
-    - cron: '08 03,06 * * *'  #每小时按设置数字的时间-分钟--运行
+    - cron: '08 06,21 * * *'  #每小时按设置数字的时间-分钟--运行
   workflow_dispatch:
 
 jobs:
