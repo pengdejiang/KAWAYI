@@ -1,13 +1,9 @@
 name: 组播测测
-
 on:
   schedule:
     - cron: '35 * * * *'  #每小时按设置数字的时间运行
-
   workflow_dispatch:
 
-    分支:
-      - main
 jobs:
   run-script:
     runs-on: ubuntu-latest
@@ -27,14 +23,11 @@ jobs:
         cd $GITHUB_WORKSPACE/speedtest
         bash ./multi_test.sh
         bash ./fofa.sh
-
-    - name: Commit and push if changed
+    - name: Update Results
       run: |
-        cd $GITHUB_WORKSPACE/speedtest	  
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add -A
-        if ! git diff --staged --quiet; then
-          git commit -m "Auto-update live files"
-          git push
-        fi
+        cd $GITHUB_WORKSPACE/speedtest
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Update results"
+        git push
