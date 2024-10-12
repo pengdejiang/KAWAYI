@@ -35,5 +35,4 @@ jobs:
         git config --local user.name "GitHub Action"  #设置当前仓库的Git用户名为GitHub Action
         git add .    #将当前目录下的所有更改添加到暂存区
         git commit -am "Automatic update"  #将暂存区的更改提交，-a表示自动将所有已跟踪文件的更改和删除添加到提交中，-m后面跟的是提交信息
-	git checkout main    #切换到本地main分支
-	git push origin main  #origin是远程仓库的默认名称，main是你想要推送到的分支名称
+        git push
