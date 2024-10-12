@@ -6,6 +6,7 @@ on:
 
   workflow_dispatch:
 
+    分支:
       - main
 jobs:
   run-script:
