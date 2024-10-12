@@ -26,8 +26,8 @@ jobs:
     - name: Update Results
       run: |
         cd $GITHUB_WORKSPACE/speedtest
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "296659440@qq.com"
+        git config --local user.name "GitHub Action11"
         git add .
         git commit -m "Update results"
         git push
