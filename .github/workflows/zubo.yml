@@ -1,8 +1,8 @@
-name: 组播扫描Daily Job
+name: 存档不正常版组播扫描Daily Job
 
 on:
   schedule:
-    - cron: "25 23,3,7,11,15 * * *"
+    - cron: "25 1 * * *"
   workflow_dispatch:
 
 jobs:
