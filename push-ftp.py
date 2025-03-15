@@ -30,7 +30,7 @@ try:
     logging.info(f'本地目录设置为: {local_directory}')
 
     # 遍历本地目录以查找所有名称包含特定字符串的文件
-    patterns = {'*FFF.txt'}
+    patterns = {'hebing-FFF.txt'}
     for filename in os.listdir(local_directory):
         if any(pattern in filename for pattern in patterns):
             # 构建文件的完整路径
