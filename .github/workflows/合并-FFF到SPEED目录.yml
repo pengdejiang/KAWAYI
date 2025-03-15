@@ -2,7 +2,7 @@ name: '合并-FFF到SPEED目录'
 
 on:
   schedule:
-    - cron: '45 01,05,09,12,16 * * *'  # UTC
+    - cron: '45 01,05,09,12,16,21 * * *'  # UTC
   workflow_dispatch:
     inputs:
       environment:
