@@ -1,4 +1,4 @@
-name: '合并-FFF到SPEED目录'
+name: 'part2-合并-FFF到SPEED目录'
 
 on:
   schedule:
