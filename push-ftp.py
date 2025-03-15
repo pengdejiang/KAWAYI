@@ -23,7 +23,7 @@ try:
     logging.info(f'已切换到FTP服务器的目录: /github-jump')
 
     # 设置本地目录以查找文件
-    local_directory = 'read-url合并/'  # 当前目录，你可以根据需要修改
+    local_directory = '/'  # 当前目录，你可以根据需要修改
     logging.info(f'本地目录设置为: {local_directory}')
 
     # 遍历本地目录以查找所有名称包含特定字符串的文件
