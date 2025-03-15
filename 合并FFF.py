@@ -61,7 +61,7 @@ for url in urls:
         process_url(url)
 
 # 定义输出文件路径
-output_file = "reaslt-CAIJI-out-all/hebing-FFF.txt"
+output_file = "speedtest/result/hebing-FFF.txt"
 
 # 确保输出文件所在的目录存在（如果不存在则创建）
 os.makedirs(os.path.dirname(output_file), exist_ok=True)
