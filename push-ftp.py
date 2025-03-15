@@ -4,6 +4,7 @@ import logging
 
 
 ######################推送1 推送本地FFF.TXT所有文件到FTP
+			
 # 配置日志记录
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 # 创建一个FTP对象
@@ -23,6 +24,10 @@ try:
     
     ftp.cwd('/github-rtp-jump')  # 切换到FTP服务器的指定目录
     logging.info(f'已切换到FTP服务器的目录: /github-jump')
+
+    # 设置本地目录以查找文件
+    local_directory = '/reaslt-CAIJI-out-all'  # 指定目录，你可以根据需要修改
+    logging.info(f'本地目录设置为: {local_directory}')
 
     # 遍历本地目录以查找所有名称包含特定字符串的文件
     patterns = {'*FFF.txt'}
