@@ -32,23 +32,26 @@ def process_url(url):
 
 # 定义要处理的URL列表
 urls = [
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%8C%97%E4%BA%AC%E8%81%94%E9%80%9AFFF.txt?token=GHSAT0AAAAAADASAPVFLES225RZAP5BCMPAZ6V3WUQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%9B%9B%E5%B7%9D%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVFKT3SXZHBGQV76OPUZ6V3XDQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%9B%9B%E5%B7%9D%E8%81%94%E9%80%9AFFF.txt?token=GHSAT0AAAAAADASAPVEXXETVGGJIEVZWGFCZ6V3YDA",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%A4%A9%E6%B4%A5%E8%81%94%E9%80%9AFFF.txt?token=GHSAT0AAAAAADASAPVFPKR3EWHSCEED2O74Z6V3ZPQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%AE%89%E5%BE%BD%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVET6I23ISHDLQSSHWQZ6V3Z3A",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B1%B1%E4%B8%9C%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVFZON6LBUBRHTCK2O6Z6V32EQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B1%B1%E8%A5%BF%E8%81%94%E9%80%9AFFF.txt?token=GHSAT0AAAAAADASAPVFO7PA3RQBA7FSO7NMZ6V32OA",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B9%BF%E4%B8%9C%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVEWITHKPLNSTSDHGU2Z6V32YQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B9%BF%E8%A5%BF%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVE7G4EWP2RK462LYD4Z6V33AA",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B1%9F%E8%8B%8F%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVFR4RRS4OEJ55NJMA6Z6V33JQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B2%B3%E5%8D%97%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVETEQLPGWPRPJNR7UCZ6V33VQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B2%B3%E5%8D%97%E8%81%94%E9%80%9AFFF.txt?token=GHSAT0AAAAAADASAPVF62HENOMZ5PWQHWQ6Z6V34KQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B9%96%E5%8D%97%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVE2B4LMYYJWKAP7CACZ6V34VQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E8%B4%B5%E5%B7%9E%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVFUTQ473SNVIRP4QQGZ6V347A",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E8%BE%BD%E5%AE%81%E8%81%94%E9%80%9AFFF.txt?token=GHSAT0AAAAAADASAPVF5X3IVR56HQPHOFXYZ6V35GQ",
-"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E9%87%8D%E5%BA%86%E7%94%B5%E4%BF%A1FFF.txt?token=GHSAT0AAAAAADASAPVEZM5ND2W5ZAPJO7DWZ6V35PQ",
-	
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%8C%97%E4%BA%AC%E8%81%94%E9%80%9AFFF.txt",#北京联通
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%9B%9B%E5%B7%9D%E7%94%B5%E4%BF%A1FFF.txt",#四川电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%9B%9B%E5%B7%9D%E8%81%94%E9%80%9AFFF.txt",#四川联通
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%A4%A9%E6%B4%A5%E8%81%94%E9%80%9AFFF.txt",#天津联通
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%AE%89%E5%BE%BD%E7%94%B5%E4%BF%A1FFF.txt",#安徽电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B1%B1%E4%B8%9C%E7%94%B5%E4%BF%A1FFF.txt",#山东电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B1%B1%E8%A5%BF%E8%81%94%E9%80%9AFFF.txt",#山西联通
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B9%BF%E4%B8%9C%E7%94%B5%E4%BF%A1FFF.txt",#广东电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E5%B9%BF%E8%A5%BF%E7%94%B5%E4%BF%A1FFF.txt",#广西电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B1%9F%E8%8B%8F%E7%94%B5%E4%BF%A1FFF.txt",#江苏电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B2%B3%E5%8C%97%E7%94%B5%E4%BF%A1FFF.txt",#河北电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B2%B3%E5%8D%97%E7%94%B5%E4%BF%A1FFF.txt",#河南电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B2%B3%E5%8D%97%E8%81%94%E9%80%9AFFF.txt",#河南联通
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A1FFF.txt",#浙江电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1FFF.txt",#湖北电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E6%B9%96%E5%8D%97%E7%94%B5%E4%BF%A1FFF.txt",#湖南电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E8%B4%B5%E5%B7%9E%E7%94%B5%E4%BF%A1FFF.txt",#贵州电信
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E8%BE%BD%E5%AE%81%E8%81%94%E9%80%9AFFF.txt",#辽宁联通
+"https://raw.githubusercontent.com/pengdejiang/KAWAYI/refs/heads/main/%E9%87%8D%E5%BA%86%E7%94%B5%E4%BF%A1FFF.txt",#重庆电信
+
 ]
 
 # 处理每个URL
