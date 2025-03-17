@@ -13,21 +13,21 @@ i=0
 
 if [ $# -eq 0 ]; then
   echo "请选择城市："
-  echo "1. 上海电信（Shanghai_103）"
-  echo "2. 北京联通（Beijing_liantong_145）"
-  echo "3. 四川电信（Sichuan_333）"
-  echo "4. 浙江电信（Zhejiang_120）"
-  echo "5. 北京电信（Beijing_dianxin_186）"
-  echo "6. 江苏（Jiangsu）"
-  echo "7. 广东电信（Guangdong_332）"
-  echo "8. 河南电信（Henan_327）"
-  echo "9. 山西电信（Shanxi_117）"
-  echo "10. 天津联通（Tianjin_160）"
-  echo "11. 湖北电信（Hubei_90）"
-  echo "12. 福建电信（Fujian_114）"
-  echo "13. 湖南电信（Hunan_282）"
+  echo "1. 天津联通（Tianjin_160）"
+  echo "2. 河北联通（Hebei_313）"
+  echo "3. 广东电信（Guangdong_332）"
+  echo "4. 北京联通（Beijing_liantong_145）"
+  echo "5. 河南电信（Henan_327）"
+  echo "6. 四川电信（Sichuan_333）"
+  echo "7. 浙江电信（Zhejiang_120）"
+  echo "8. 上海电信（Shanghai_103）"
+  echo "9. 湖南电信（Hunan_282）"
+  echo "10. 湖北电信（Hubei_90）"
+  echo "11. 福建电信（Fujian_114）"
+  echo "12. 江苏（Jiangsu）"
+  echo "13. 山西电信（Shanxi_117）"
   echo "14. 甘肃电信（Gansu_105）"
-  echo "15. 河北联通（Hebei_313）"
+  echo "15. 北京电信（Beijing_dianxin_186）"
   echo "0. 全部"
   read -t 10 -p "输入选择或在10秒内无输入将默认选择全部: " city_choice
 
@@ -42,21 +42,44 @@ fi
 
 # 根据用户选择设置城市和相应的stream
 case $city_choice in
+
+
     1)
-        city="Shanghai_103"
-        stream="rtp/239.45.1.4:5140"
-	channel_key="上海"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Shanghai" && org="China Telecom Group" && protocol="http"' | base64 |tr -d '\n')
+        city="Tianjin_160"
+        stream="rtp/225.1.2.190:5002"
+        channel_key="天津联通"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Tianjin" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
     2)
+        city="Hebei_313"
+        stream="rtp/239.253.93.134:6631"
+        channel_key="河北联通"
+        url_fofa=$(echo ""udpxy" && country="CN" && region="Hebei"  && protocol="http"" | base64)
+        url_fofa="https://fofa.info/result?qbase64="$url_fofa
+        ;;
+    3)
+        city="Guangdong_332"
+        stream="rtp/239.77.1.98:5146"
+        channel_key="广东电信"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Guangdong" && protocol="http"' | base64 |tr -d '\n')
+        url_fofa="https://fofa.info/result?qbase64="$url_fofa
+        ;;
+    4)
         city="Beijing_liantong_145"
         stream="rtp/239.3.1.236:2000"
         channel_key="北京联通"
         url_fofa=$(echo  '"udpxy" && country="CN" && region="Beijing" && org="China Unicom Beijing Province Network" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
-    3)
+    5)
+        city="Henan_327"
+        stream="rtp/239.16.20.1:10010"
+        channel_key="河南电信"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Henan" && city="Zhengzhou"  && protocol="http"' | base64 |tr -d '\n')
+        url_fofa="https://fofa.info/result?qbase64="$url_fofa
+        ;;
+    6)
         city="Sichuan_333"
         stream="rtp/239.93.42.33:5140"
         channel_key="四川电信"
@@ -64,74 +87,53 @@ case $city_choice in
         url_fofa=$(echo  '"udpxy" && country="CN" && region="Sichuan" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
-    4)
+    7)
         city="Zhejiang_120"
         stream="rtp/233.50.201.63:5140"
         channel_key="浙江电信"
         url_fofa=$(echo  '"udpxy" && country="CN" && region="Zhejiang" && org="Chinanet" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
-    5)
-        city="Beijing_dianxin_186"
-        stream="rtp/225.1.8.80:2000"
-        channel_key="北京电信"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Beijing" && org="China Networks Inter-Exchange"  && protocol="http"' | base64 |tr -d '\n')
-        url_fofa="https://fofa.info/result?qbase64="$url_fofa
-        ;;
-    6)
-        city="Jiangsu"
-        stream="rtp/239.49.8.19:9614"
-        channel_key="江苏"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Jiangsu" && protocol="http"' | base64 |tr -d '\n')
-        url_fofa="https://fofa.info/result?qbase64="$url_fofa
-        ;;
-    7)
-        city="Guangdong_332"
-        stream="rtp/239.77.1.98:5146"
-        channel_key="广东电信"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Guangdong" && protocol="http"' | base64 |tr -d '\n')
-        url_fofa="https://fofa.info/result?qbase64="$url_fofa
-        ;;
     8)
-        city="Henan_327"
-        stream="rtp/239.16.20.1:10010"
-        channel_key="河南电信"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Henan" && city="Zhengzhou"  && protocol="http"' | base64 |tr -d '\n')
+        city="Shanghai_103"
+        stream="rtp/239.45.1.4:5140"
+	channel_key="上海"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Shanghai" && org="China Telecom Group" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
     9)
-        city="Shanxi_117"
-        stream="rtp/239.1.1.7:8007"
-        channel_key="山西电信"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Shanxi" && city="Taiyuan" && protocol="http"' | base64 |tr -d '\n')
+        city="Hunan_282"
+        stream="rtp/239.76.252.35:9000"
+        channel_key="湖南电信"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Hunan" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
     10)
-        city="Tianjin_160"
-        stream="rtp/225.1.2.190:5002"
-        channel_key="天津联通"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Tianjin" && protocol="http"' | base64 |tr -d '\n')
-        url_fofa="https://fofa.info/result?qbase64="$url_fofa
-        ;;
-    11)
         city="Hubei_90"
         stream="rtp/239.254.96.96:8550"
         channel_key="湖北电信"
         url_fofa=$(echo  '"udpxy" && country="CN" && region="Hubei" && city="Wuhan" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
-    12)
+    11)
         city="Fujian_114"
         stream="rtp/239.61.2.183:9086"
         channel_key="福建电信"
         url_fofa=$(echo  '"udpxy" && country="CN" && region="Fujian" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
+    12)
+        city="Jiangsu"
+        stream="rtp/239.49.8.19:9614"
+        channel_key="江苏"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Jiangsu" && protocol="http"' | base64 |tr -d '\n')
+        url_fofa="https://fofa.info/result?qbase64="$url_fofa
+        ;;
     13)
-        city="Hunan_282"
-        stream="rtp/239.76.252.35:9000"
-        channel_key="湖南电信"
-        url_fofa=$(echo  '"udpxy" && country="CN" && region="Hunan" && protocol="http"' | base64 |tr -d '\n')
+        city="Shanxi_117"
+        stream="rtp/239.1.1.7:8007"
+        channel_key="山西电信"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Shanxi" && city="Taiyuan" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
     14)
@@ -141,17 +143,19 @@ case $city_choice in
         url_fofa=$(echo  '"udpxy" && country="CN" && region="Gansu" && city="Lanzhou" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
+		
     15)
-        city="Hebei_313"
-        stream="rtp/239.253.93.134:6631"
-        channel_key="河北联通"
-        url_fofa=$(echo ""udpxy" && country="CN" && region="Hebei"  && protocol="http"" | base64)
+        city="Beijing_dianxin_186"
+        stream="rtp/225.1.8.80:2000"
+        channel_key="北京电信"
+        url_fofa=$(echo  '"udpxy" && country="CN" && region="Beijing" && org="China Networks Inter-Exchange"  && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
+
     0)
         # 如果选择是“全部选项”，则逐个处理每个选项
-        #这里改为选择15--15  默认是1--15  现在相当于只选择一个执行
-        for option in {14..15}; do
+        #这里改为选择1--7  默认是1--15  现在相当于只选择一个执行
+        for option in {1..7}; do
           bash  "$0" $option  # 假定fofa.sh是当前脚本的文件名，$option将递归调用
         done
         exit 0
